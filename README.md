@@ -1,4 +1,4 @@
 # practica_flutter
 Ejemplos con flutter
 
-En cada rama genera hay un ejemplo de aplicación distinto con Flutter.
+En cada rama hay un ejemplo de aplicación distinto con Flutter.
