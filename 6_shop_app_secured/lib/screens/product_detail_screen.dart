@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import "../providers/products.dart";
+
+import '../providers/products.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  static const routeName = "/product-detail";
+  // final String title;
+  // final double price;
+
+  // ProductDetailScreen(this.title, this.price);
+  static const routeName = '/product-detail';
 
   @override
   Widget build(BuildContext context) {
-    final productId = ModalRoute.of(context).settings.arguments as String;
+    final productId =
+        ModalRoute.of(context).settings.arguments as String; // is the id!
     final loadedProduct = Provider.of<Products>(
       context,
       listen: false,
@@ -22,13 +28,14 @@ class ProductDetailScreen extends StatelessWidget {
             Container(
               height: 300,
               width: double.infinity,
-              child: Image.network(loadedProduct.imageUrl, fit: BoxFit.cover),
+              child: Image.network(
+                loadedProduct.imageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
-              "\$${loadedProduct.price}",
+              '\$${loadedProduct.price}',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 20,
